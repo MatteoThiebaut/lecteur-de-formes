@@ -27,9 +27,9 @@ Le projet *commité* ici ne compile pas et il manque des fonctionnalités.
 En plus des formes-rectangles, on va avoir des formes-ovales.
 
 - Le bouton « Forme » courant deviendra « Forme rectangle »
-- Ajouter un bouton « Forme ovale » en examinant le traitement actuel des boutons actuel et en dupliquand/adaptant ces fonctionnalités
+- Ajouter un bouton « Forme ovale » en examinant le traitement actuel des boutons et en dupliquant/adaptant ces fonctionnalités
 - Ajouter une classe qui implémente la nouvelle forme en regardant comment la classe `Forme` fonctionne
-- Associer un instrument et une couleur différents pour les formes ovales
+- Associer un instrument différent et une couleur différente pour les formes ovales
 
 ### 3. Refactoring
 
