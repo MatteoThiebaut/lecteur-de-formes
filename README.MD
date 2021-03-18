@@ -1,8 +1,8 @@
-# Lecteur de formes
+# Lecteur de formes - Projet support SLAM5
 
-Projet support SLAM5.
+## Démonstration du projet fini
 
-## Démonstration du projet fini (sans le son, mais c'est la sixième de Beethov comme on peut le voir facilement)
+(sans le son, mais c'est la sixième de Beethov comme on peut le voir facilement)
 
 ![Sixième Beethov](lecteur-de-formes.gif)
 
@@ -27,7 +27,7 @@ Le projet *commité* ici ne compile pas et il manque des fonctionnalités.
 En plus des formes-rectangles, on va avoir des formes-ovales.
 
 - Le bouton « Forme » courant deviendra « Forme rectangle »
-- Ajouter un bouton « Forme ovale » en examinant le traitement des boutons actuel et en dupliquand/adaptant ces fonctionnalité
+- Ajouter un bouton « Forme ovale » en examinant le traitement actuel des boutons actuel et en dupliquand/adaptant ces fonctionnalités
 - Ajouter une classe qui implémente la nouvelle forme en regardant comment la classe `Forme` fonctionne
 - Associer un instrument et une couleur différents pour les formes ovales
 
@@ -35,7 +35,9 @@ En plus des formes-rectangles, on va avoir des formes-ovales.
 
 Vous avez dû prendre conscience de la duplication de code que vous mettiez en place au nombre de copier/coller effectués dans la partie 2. Il y a en effet beaucoup de code réutilisé depuis `OutilForme` et `Forme`. L'objectif est ici de réduire/supprimer la duplication en utilisant l'héritage.
 
-- Concevez la classe abstraite `Forme` dont vont dériver deux classes concrètes `Rectangle` et `Ovale`
-- Concevez la classe abstraite `OutilForme` dont vont dériver deux classes concrètes `OutilRectangle` et `OutilOvale`
+- Concevez la classe abstraite `Forme` dont vont dériver deux classes concrètes `Rectangle` et `Ovale` ; factorisez le code commun dans la classe abstraite
+- Concevez la classe abstraite `OutilForme` dont vont dériver deux classes concrètes `OutilRectangle` et `OutilOvale` ; factorisez le code commun dans la classe abstraite
 
-L'ajout de nouvelles formes et des outils associés par la suite sera grandement facilité. À nous la richesse et le pouvoir.
+L'ajout de nouvelles formes et des outils associés par la suite sera alors grandement facilité.
+
+**À nous la richesse et le pouvoir.**
