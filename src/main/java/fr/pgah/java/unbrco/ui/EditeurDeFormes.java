@@ -172,4 +172,12 @@ public class EditeurDeFormes extends JFrame {
       return SwingUtilities.convertMouseEvent(e.getComponent(), e, dessinCourant);
     }
   }
+
+public MidiSynth getMidiSynth() {
+    return null;
+}
+
+public Dessin getDessinCourant() {
+    return null;
+}
 }

@@ -24,13 +24,26 @@ public class Forme {
     colonneJouee = 0;
   }
 
+  public Forme(int x, int y, int longueur, int hauteur) {
+    this.x = x;
+    this.y = y;
+    this.longueur = longueur;
+    this.hauteur = hauteur;
+    
+  }
+
   public boolean contientX(int x) {
 
     // À COMPLÉTER
     // renvoyer vrai si le x donné est dans l'espace horizontal de la forme
     // renvoyer faux sinon
-
-    return false;
+    int xmax = this.x + longueur;
+    if(this.x <= x && x <= xmax){
+      return true;
+    } else {
+      return false;
+    }
+    
   }
 
   public boolean contientY(int y) {
@@ -38,14 +51,22 @@ public class Forme {
     // À COMPLÉTER
     // renvoyer vrai si le y donné est dans l'espace vertical de la forme
     // renvoyer faux sinon
-
-    return false;
+    int ymax = this.y + hauteur;
+    if(this.y <= y && y <= ymax){
+      return true;
+    } else {
+      return false;
+    }
+    
   }
 
   public boolean contient(Point pt) {
 
     // À COMPLÉTER
     // renvoyer vrai si le point donné est dans l'espace occupé par la forme
+    if ( contientX(x) && contientY(y) ){
+      return true; 
+    }
     // renvoyer faux sinon
 
     return false;

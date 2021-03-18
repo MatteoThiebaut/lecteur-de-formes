@@ -21,7 +21,8 @@ public class LecteurDeDessin implements ActionListener {
 
     // À COMPLÉTER
     // Initialiser toutes les variables d'instance
-
+     this.dessin = dessin;
+     this.timer = timer;
   }
 
   @Override
@@ -55,9 +56,14 @@ public class LecteurDeDessin implements ActionListener {
 
     // Déselectionner et stopper toutes les formes qui étaient dans
     // la colonne précédente et qui ne sont plus dans la colonne courante
-
+    if (dansLaColonnePrecedente !=  dansLaColonneCourante) {
+      forme.deselectionnerEtStopper();
+    }
+    
     // Sélectionner et jouer toutes les formes qui sont dans
     // la colonne courante et qui n'étaient pas dans la colonne précédente
-
+    if (dansLaColonneCourante != dansLaColonnePrecedente ){
+      forme.selectionnerEtJouer();
+    }
   }
 }
