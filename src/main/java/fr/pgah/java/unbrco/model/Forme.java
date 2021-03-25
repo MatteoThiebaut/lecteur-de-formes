@@ -33,43 +33,34 @@ public class Forme {
   }
 
   public boolean contientX(int x) {
-
-    // À COMPLÉTER
     // renvoyer vrai si le x donné est dans l'espace horizontal de la forme
     // renvoyer faux sinon
-    int xmax = this.x + longueur;
-    if (this.x <= x && x <= xmax) {
+    if (this.x < x && this.x + longueur > x) {
       return true;
-    } else {
-      return false;
     }
+    return false;
 
   }
 
   public boolean contientY(int y) {
-
-    // À COMPLÉTER
     // renvoyer vrai si le y donné est dans l'espace vertical de la forme
     // renvoyer faux sinon
-    int ymax = this.y + hauteur;
-    if (this.y <= y && y <= ymax) {
+    if (this.y < y && this.y + hauteur > y) {
       return true;
-    } else {
-      return false;
     }
-
+    return false;
   }
 
   public boolean contient(Point pt) {
-
-    // À COMPLÉTER
-    // renvoyer vrai si le point donné est dans l'espace occupé par la forme
-    if (contientX(x) && contientY(y)) {
-      return true;
+    if (this.y < pt.getY() && this.y + hauteur > pt.getY()) {
+      if (this.x < pt.getX() && this.x + longueur > pt.getX()) {
+        return true;
+      }
     }
+    return false;
+    // renvoyer vrai si le point donné est dans l'espace occupé par la forme
     // renvoyer faux sinon
 
-    return false;
   }
 
   public void setLimites(Point basDroite) {
