@@ -65,7 +65,7 @@ public class EditeurDeFormes extends JFrame {
 
     // À COMPLÉTER
     // Ajouter la forme donnée au dessin
-    
+
     dessinCourant.ajouterForme(f);
   }
 
@@ -175,11 +175,11 @@ public class EditeurDeFormes extends JFrame {
     }
   }
 
-public MidiSynth getMidiSynth() {
-    return null;
-}
+  public MidiSynth getMidiSynth() {
+    return midiSynth;
+  }
 
-public Dessin getDessinCourant() {
-    return null;
-}
+  public Dessin getDessinCourant() {
+    return dessinCourant;
+  }
 }

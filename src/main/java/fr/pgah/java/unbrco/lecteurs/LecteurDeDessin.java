@@ -8,7 +8,6 @@ import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class LecteurDeDessin implements ActionListener {
   private Dessin dessin;
   private Timer timer;
@@ -21,8 +20,8 @@ public class LecteurDeDessin implements ActionListener {
 
     // À COMPLÉTER
     // Initialiser toutes les variables d'instance
-     this.dessin = dessin;
-     this.timer = timer;
+    this.dessin = dessin;
+    this.timer = timer;
   }
 
   @Override
@@ -56,14 +55,18 @@ public class LecteurDeDessin implements ActionListener {
 
     // Déselectionner et stopper toutes les formes qui étaient dans
     // la colonne précédente et qui ne sont plus dans la colonne courante
-    if (dansLaColonnePrecedente !=  dansLaColonneCourante) {
-      forme.deselectionnerEtStopper();
+    dansLaColonneCourante = dessin.formesSurLaColonne(colonneEnCours);
+
+    for (Forme forme : dansLaColonnePrecedente) {
+      if (!dansLaColonneCourante.contains(forme)) {
+        forme.deselectionnerEtStopper();
+      }
     }
-    
-    // Sélectionner et jouer toutes les formes qui sont dans
-    // la colonne courante et qui n'étaient pas dans la colonne précédente
-    if (dansLaColonneCourante != dansLaColonnePrecedente ){
-      forme.selectionnerEtJouer();
+    for (Forme forme : dansLaColonneCourante) {
+      if (!dansLaColonnePrecedente.contains(forme)) {
+        forme.selectionnerEtJouer();
+      }
     }
+
   }
 }
