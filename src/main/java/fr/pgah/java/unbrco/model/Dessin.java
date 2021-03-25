@@ -26,6 +26,9 @@ public class Dessin extends JPanel {
     // À COMPLÉTER
     // Renvoyer vrai si le dessin contient la forme donnée
 
+    if (formes.contains(f)) {
+      return true;
+    }
     return false;
   }
 
@@ -55,14 +58,16 @@ public class Dessin extends JPanel {
 
     // À COMPLÈTER
     // Ajouter la forme donnée au dessin
-        dessin.add(f);
+    if(!formes.contains(f)){
+      formes.add(f);
+    }
   }
 
   public void supprimerForme(Forme f) {
 
     // À COMPLÈTER
     // Supprimer la forme donnée du dessin
-         dessin.supprimer(f);
+         dessin.remove(f);
   }
 
   public Forme getPremiereFormeEn(Point point) {
@@ -72,24 +77,26 @@ public class Dessin extends JPanel {
     // Si plusieurs : renvoyer la première trouvée
     // Si aucune : renvoyer null
     for(Forme forme: formes){
-      if(forme.contient(point)){
+      if(forme.contient(point)){  
       return forme;
    }
+  }
       return null;
     }
-  }
+  
   public List<Forme> formesSurLaColonne(int col) {
 
     // À COMPLÉTER
     // Renvoyer la liste des formes qui se trouvent sur la colonne donnée
     // (liste vide si aucune)
 
-    List<Forme> res= new ArrayList<>();
-    for(Forme forme: formes){
-      if(forme.contientX(col)){
-        res.add(forme);
+    List<Forme> listeForme = new ArrayList<Forme>();
+    for (Forme forme : formes) {
+      if (forme.contientX(col)) {
+        listeForme.add(forme);
       }
     }
-      return null;
+
+    return listeForme;
   }
 }

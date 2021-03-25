@@ -65,7 +65,8 @@ public class EditeurDeFormes extends JFrame {
 
     // À COMPLÉTER
     // Ajouter la forme donnée au dessin
-
+    
+    dessinCourant.ajouterForme(f);
   }
 
   public void supprimerDuDessin(Forme f) {
@@ -73,6 +74,7 @@ public class EditeurDeFormes extends JFrame {
     // À COMPLÉTER
     // Supprimer la forme donnée du dessin
 
+    dessinCourant.supprimerForme(f);
   }
 
   private void handleSourisPressee(MouseEvent e) {
