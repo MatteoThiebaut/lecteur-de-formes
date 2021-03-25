@@ -15,13 +15,19 @@ public class Forme {
   private MidiSynth midiSynth;
   private int instrument;
   private int colonneJouee;
+  private int type;
 
-  public Forme(Point hautGauche, MidiSynth midiSynth) {
+  public Forme(Point hautGauche, MidiSynth midiSynth, int type) {
     this((int) hautGauche.getX(), (int) hautGauche.getY(), 0, 0);
     estSelectionnee = false;
     this.midiSynth = midiSynth;
-    instrument = 0;
     colonneJouee = 0;
+    this.type = type;
+    if (type == 1) {
+      instrument = 23;
+    } else if (type == 2) {
+      instrument = 67;
+    }
   }
 
   public Forme(int x, int y, int longueur, int hauteur) {
@@ -75,10 +81,14 @@ public class Forme {
     } else {
       g.setColor(Color.white);
     }
+
     g.fillRect(x, y, longueur, hauteur);
     g.setColor(saveCouleur);
-    g.drawRect(x, y, longueur, hauteur);
-
+    if (type == 1) {
+      g.drawRect(x, y, longueur, hauteur);
+    } else {
+      g.drawOval(x, y, longueur, hauteur);
+    }
     if (colonneJouee > 0 && colonneJouee < longueur) {
       g.setColor(Color.red);
       g.drawLine(x + colonneJouee, y, x + colonneJouee, y + hauteur);

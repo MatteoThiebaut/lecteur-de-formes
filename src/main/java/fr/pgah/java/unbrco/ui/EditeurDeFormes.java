@@ -123,8 +123,11 @@ public class EditeurDeFormes extends JFrame {
     zoneOutils.setSize(new Dimension(0, 0));
     add(zoneOutils, BorderLayout.SOUTH);
 
-    OutilForme outilForme = new OutilForme(this, zoneOutils);
+    OutilFormeCarre outilForme = new OutilFormeCarre(this, zoneOutils);
     outils.add(outilForme);
+
+    OutilFormeOvale OutilFormeOvale = new OutilFormeOvale(this, zoneOutils);
+    outils.add(OutilFormeOvale);
 
     OutilDeplacer outilDeplacer = new OutilDeplacer(this, zoneOutils);
     outils.add(outilDeplacer);
